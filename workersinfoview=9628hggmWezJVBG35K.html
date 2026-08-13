@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FWCMS - Worker Info</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Hanuman', serif; }
+        .font-mono { font-family: ui-monospace, monospace; }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900 pb-10">
+
+    <header class="bg-white p-4 shadow-sm flex justify-center md:justify-start">
+        <img src="ministry banner.png" alt="Logo" class="h-14">
+    </header>
+
+    <div class="bg-blue-500 text-white p-2 flex justify-end px-4 shadow-md text-sm">
+        <button onclick="switchLang()" class="flex items-center gap-2 hover:opacity-80 transition font-bold">
+            <img id="lang-img" src="us.png" class="w-6 h-6 rounded-sm">
+            <span id="lang-text">English</span>
+        </button>
+    </div>
+
+    <main class="max-w-lg mx-auto mt-6 bg-white rounded-xl shadow-2xl overflow-hidden mx-4 border border-gray-200">
+        
+        <div class="h-28 bg-blue-500 flex items-start p-4" >
+            <h1 id="title" class="text-white font-bold flex items-center gap-2 text-sm sm:text-base drop-shadow-sm">
+                បណ្ណ និងសៀវភៅការងារជនបរទេស
+            </h1>
+        </div>
+
+        <div class="relative flex flex-col items-center -mt-14">
+            <img src="WANG PENG.PNG" 
+                 class="w-28 h-28 rounded-full border-4 border-white object-cover shadow-lg bg-white">
+            <div class="text-center mt-3 px-4">
+                <h2 class="text-xl font-bold uppercase tracking-wide">WANG PENG</h2>
+                <p id="role-gender" class="text-gray-500 text-sm">មុខងារបច្ចុប្បន្ន: Owner | ភេទ: Male</p>
+            </div>
+        </div>
+
+        <div class="p-5">
+            <h3 id="sub-title" class="text-blue-600 font-bold text-center border-b border-blue-100 pb-2 mb-4">គណនីជនបរទេស</h3>
+            <div id="info-list" class="space-y-2.5 text-sm">
+                <div class="flex justify-between border-b border-gray-50 pb-1">
+                    <span class="text-gray-500" data-kh="ថ្ងៃ.ខែ.ឆ្នាំកំណើត:" data-en="Date of Birth:">ថ្ងៃ.ខែ.ឆ្នាំកំណើត:</span>
+                    <span class="font-medium">01 Mar 1998</span>
+                </div>
+                <div class="flex justify-between border-b border-gray-50 pb-1">
+                    <span class="text-gray-500" data-kh="ប្រទេសកំណើត:" data-en="Country of Birth:">ប្រទេសកំណើត:</span>
+                    <span class="font-medium">CHINESE</span>
+                </div>
+                <div class="flex justify-between border-b border-gray-50 pb-1">
+                    <span class="text-gray-500" data-kh="លិខិតឆ្លងដែនលេខ:" data-en="Passport No:">លិខិតឆ្លងដែនលេខ:</span>
+                    <span class="font-mono font-bold text-blue-800">EM0367509</span>
+                </div>
+                <div class="flex justify-between border-b border-gray-50 pb-1">
+                    <span class="text-gray-500" data-kh="លិខិតឆ្លងដែន ផ្តល់នៅថ្ងៃ:" data-en="Passport Issued Date:">លិខិតឆ្លងដែន ផ្តល់នៅថ្ងៃ:</span>
+                    <span class="font-medium">19 Jan 2022</span>
+                </div>
+                <div class="flex justify-between border-b border-gray-50 pb-1">
+                    <span class="text-gray-500" data-kh="លិខិតឆ្លងដែន ផុតកំណត់ថ្ងៃ:" data-en="Passport Expiry Date:">លិខិតឆ្លងដែន ផុតកំណត់ថ្ងៃ:</span>
+                    <span class="font-medium text-orange-600">18 Jan 2032</span>
+                </div>
+                <div class="flex justify-between border-b border-gray-50 pb-1">
+                    <span class="text-gray-500" data-kh="កំរិតបណ្តុះបណ្តាល:" data-en="Education Level:">កំរិតបណ្តុះបណ្តាល:</span>
+                    <span class="font-medium">Bachelor</span>
+                </div>
+            
+                <div class="flex justify-between border-b border-gray-50 pb-1">
+                    <span class="text-gray-500" data-kh="ថ្ងៃចេញបណ្ណចុងក្រោយ:" data-en="Last Issued Date:">ថ្ងៃចេញបណ្ណចុងក្រោយ:</span>
+                    <span class="font-medium">10 Mar 2026</span>
+                </div>
+                <div class="flex justify-between border-b border-gray-50 pb-1">
+                    <span class="text-gray-500" data-kh="ថ្ងៃផុតកំណត់បណ្ណចុងក្រោយ:" data-en="Last Expiry Date:">ថ្ងៃផុតកំណត់បណ្ណចុងក្រោយ:</span>
+                    <span class="font-medium">31 Dec 2026</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-5 bg-gray-50 border-t border-gray-100">
+            <h3 id="job-title" class="text-blue-600 font-bold text-center mb-3 text-sm">ប្រវត្តិការងារ</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-[11px] bg-white border border-gray-200">
+                    <thead class="bg-gray-100 text-gray-600">
+                        <tr id="table-head">
+                            <th class="p-2 border" data-kh="ឆ្នាំ" data-en="Year">ឆ្នាំ</th>
+                            <th class="p-2 border" data-kh="ឈ្មោះក្រុមហ៊ុន" data-en="Company Name">ឈ្មោះក្រុមហ៊ុន</th>
+                            <th class="p-2 border" data-kh="ថ្ងៃចូលធ្វើការ" data-en="Start Date">ថ្ងៃចូលធ្វើការ</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center text-gray-700">
+                        <tr>
+                            <td class="p-2 border font-mono">2022</td>
+                            <td class="p-2 border italic text-left">SELF EMPLOYED</td>
+                            <td class="p-2 border">30 Mar 2022</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="m-5 p-4 bg-red-100 rounded-lg border border-red-200 text-[12px] leading-relaxed text-center">
+            <p id="warning-kh" class="text-red-700 font-bold mb-1">អ្នកក្លែងព័ត៌មាន QR Code នៃប័ណ្ណនិងសៀវភៅការងារជនបរទេសនឹងត្រូវផ្តន្ទាទោសតាមច្បាប់</p>
+            <p id="warning-en" class="text-red-600 italic font-medium">Anyone who counterfeits the information in QR Code of this foreign work permit and foreign employment card will be convicted by law.</p>
+        </div>
+    </main>
+
+    <footer class="mt-8 text-center text-gray-600 text-[13px] px-4 font-semibold">
+        Copyright © 2025 Ministry of Labour and Vocational Training, Kingdom of Cambodia.
+    </footer>
+
+    <script>
+        let currentLang = 'kh';
+        function switchLang() {
+            const isKh = currentLang === 'kh';
+            const langBtnText = document.getElementById('lang-text');
+            const langBtnImg = document.getElementById('lang-img');
+            const title = document.getElementById('title');
+            const subTitle = document.getElementById('sub-title');
+            const roleGender = document.getElementById('role-gender');
+            const jobTitle = document.getElementById('job-title');
+
+            if (isKh) {
+                langBtnText.innerText = "ភាសាខ្មែរ";
+                langBtnImg.src = "kh.png";
+                title.innerText = "Foreigner Work Permit & Employment Card";
+                subTitle.innerText = "Foreigner Account Details";
+                roleGender.innerText = "Current Position: Owner | Gender: Male";
+                jobTitle.innerText = "Employment History";
+                updateLabels('data-en');
+                currentLang = 'en';
+            } else {
+                langBtnText.innerText = "English";
+                langBtnImg.src = "https://fwcms.mlvt.gov.kh/assets/front/img/united-states.png";
+                title.innerText = "បណ្ណ និងសៀវភៅការងារជនបរទេស";
+                subTitle.innerText = "គណនីជនបរទេស";
+                roleGender.innerText = "មុខងារបច្ចុប្បន្ន: Owner | ភេទ: Male";
+                jobTitle.innerText = "ប្រវត្តិការងារ";
+                updateLabels('data-kh');
+                currentLang = 'kh';
+            }
+        }
+        function updateLabels(attr) {
+            document.querySelectorAll('[' + attr + ']').forEach(el => {
+                el.innerText = el.getAttribute(attr);
+            });
+        }
+    </script>
+</body>
+</html>
